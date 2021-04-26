@@ -14,7 +14,7 @@ from rest_framework.filters import OrderingFilter
 from .models import WaterperCapita
 from .serializers import WaterCapitaSerializer
 
-class kisiBasiCekilenSuList(generics.ListAPIView):
+class kisiBasiCekilenSuList(generics.ListCreateAPIView):
     authentication_classes = [] #disables authentication
     permission_classes = [] #disables permission
 
@@ -36,6 +36,7 @@ class kisiBasiCekilenSuList(generics.ListAPIView):
     '''
     
     def post(self, request):
+        print(request.data)
         serializer = WaterCapitaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -44,7 +45,7 @@ class kisiBasiCekilenSuList(generics.ListAPIView):
 
         close_old_connections()
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+'''
     def delete(self, request):
         istanbulNufusList = WaterperCapita.objects.all()
         operation = istanbulNufusList.delete()
@@ -54,8 +55,8 @@ class kisiBasiCekilenSuList(generics.ListAPIView):
         else:
             data['failed'] = "delete failed"
         return  Response(data=data)
-
-class kisiBasiCekilenSuDetail(generics.RetrieveAPIView): 
+'''
+class kisiBasiCekilenSuDetail(generics.RetrieveUpdateDestroyAPIView): 
     queryset = WaterperCapita.objects.all()
     serializer_class = WaterCapitaSerializer
     filter_backends = [DjangoFilterBackend]

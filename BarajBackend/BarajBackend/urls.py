@@ -18,6 +18,6 @@ from django.urls import path,include
 import istanbulnufus,kisiBasiCekilenSu
 urlpatterns = [
     path('admin/', admin.site.urls),
-        path('api/istanbulnufus', include('istanbulnufus.urls')),
-        path('api/waterPerCapita', include('kisiBasiCekilenSu.urls')),
+        path('api/istanbulnufus/', include('istanbulnufus.urls')),
+        path('api/waterPerCapita/', include('kisiBasiCekilenSu.urls')),
 ]
