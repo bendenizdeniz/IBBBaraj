@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'istanbulnufus',
     'kisiBasiCekilenSu',
+    'usageRate',
+    'barajdanCekilenSu',
 
     'rest_framework',
     'django_filters',

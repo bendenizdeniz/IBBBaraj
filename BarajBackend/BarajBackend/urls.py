@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-import istanbulnufus,kisiBasiCekilenSu
+import istanbulnufus,kisiBasiCekilenSu,usageRate,barajdanCekilenSu
 urlpatterns = [
     path('admin/', admin.site.urls),
         path('api/istanbulnufus/', include('istanbulnufus.urls')),
         path('api/waterPerCapita/', include('kisiBasiCekilenSu.urls')),
+        path('api/usageRate/', include('usageRate.urls')),
+        path('api/damVolume/', include('barajdanCekilenSu.urls')),
+
 ]
