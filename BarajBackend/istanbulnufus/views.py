@@ -55,7 +55,7 @@ class istanbulNufusList(generics.ListAPIView):
             data['failed'] = "delete failed"
         return  Response(data=data)
 
-class istanbulNufusDetail(generics.RetrieveAPIView): 
+class istanbulNufusDetail(generics.RetrieveUpdateDestroyAPIView): 
     queryset = istanbulNufus.objects.all()
     serializer_class = istanbulNufusSerializer
     filter_backends = [DjangoFilterBackend]

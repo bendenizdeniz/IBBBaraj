@@ -21,8 +21,8 @@ class kisiBasiCekilenSuList(generics.ListCreateAPIView):
     serializer_class = WaterCapitaSerializer
     queryset = WaterperCapita.objects.all()
     filter_backends = [DjangoFilterBackend, OrderingFilter]
-    ordering_fields = ['year','city']
-    filterset_fields = ['year','city']
+    ordering_fields = ['_year','city']
+    filterset_fields = ['_year','city']
     '''
     def get(self, request, format=None):
         

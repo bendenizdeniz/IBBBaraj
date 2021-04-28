@@ -8,4 +8,5 @@ class WaterCapitaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WaterperCapita
-        fields = ['city','year', 'waterCapita']
+        fields = '__all__'
+        #['city','_year', 'waterCapita']

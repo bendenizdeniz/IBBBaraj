@@ -8,4 +8,5 @@ class istanbulNufusSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = istanbulNufus
-        fields = ['year', 'population']
+        fields = '__all__'
+
