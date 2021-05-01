@@ -8,5 +8,5 @@ class usageRateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = usageRate
-        fields = '__all__'
+        fields = ['usageField','usageRate']
         #['city','_year', 'waterCapita']
